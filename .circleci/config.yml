@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/openjdk:11-browsers-legacy # - image: circleci/openjdk:8-jdk
+      - image: circleci/openjdk:8-jdk
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -38,5 +38,10 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
+      # gradlew is having trouble with permission inside circleci
+      - run:
+          name: chmod permissions
+          command: chmod +x ./gradlew
+
       # run tests!
-      - run: ./gradlew test # gradle test
+      - run: ./gradlew test
