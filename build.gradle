@@ -16,10 +16,11 @@ repositories {
 }
 
 dependencies {
-    compile ('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
-    compile ('org.springframework.boot:spring-boot-starter-webflux')
-    compileOnly ('org.projectlombok:lombok')
-    testCompile ('org.springframework.boot:spring-boot-starter-test')
-    testCompile ('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
-    testCompile ('io.projectreactor:reactor-test')
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+    compile 'org.springframework.boot:spring-boot-starter-webflux'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+    testCompile 'io.projectreactor:reactor-test'
 }
