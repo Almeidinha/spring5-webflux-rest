@@ -132,7 +132,7 @@ public class VendorControllerTest {
                 .exchange()
                 .expectStatus().isAccepted()
                 .expectBody(String.class)
-                .isEqualTo("Delete Succesfully!");
+                .isEqualTo("Delete Successfully!");
 
 
     }*/

@@ -62,7 +62,7 @@ public class VendorController {
     public Mono<ResponseEntity<String>>  delete(@PathVariable String id) {
 
         return vendorRepository.deleteById(id)
-                .then(Mono.just(new ResponseEntity<>("Delete Succesfully!", HttpStatus.ACCEPTED)))
+                .then(Mono.just(new ResponseEntity<>("Delete Successfully!", HttpStatus.ACCEPTED)))
                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 
     }
